@@ -252,6 +252,7 @@ public class ExecutionEntity extends VariableScopeImpl implements ActivityExecut
     // Initialize the new execution
     subProcessInstance.setProcessDefinition((ProcessDefinitionImpl) processDefinition);
     subProcessInstance.setProcessInstance(subProcessInstance);
+    subProcessInstance.setBusinessKey(getProcessInstance().getBusinessKey());
     
     Context.getCommandContext().getHistoryManager()
       .recordSubProcessInstanceStart(this, subProcessInstance);
